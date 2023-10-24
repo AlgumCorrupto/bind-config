@@ -1,0 +1,18 @@
+;
+; BIND reverse data file for local loopback interface
+;
+$TTL	604800
+@	IN	SOA	redevirtual.local. root.redevirtual.local. (
+			      2		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+
+; record do server
+@	IN	NS	SRV00.redevirtual.local.
+; record tipo A do servidor
+SRV00	IN	A	168.192.0.1
+; record tipo PTR do servidor
+1	IN	PTR	SRV00.redevirtual.local
+; record tipo PTR dos clientes
